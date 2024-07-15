@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}My Site{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="nav-links">
+          <a href="{% url 'part1:home' %}">Home</a>
+          <a href="{% url 'part1:contact' %}">Contact</a>
+          <a href="{% url 'part1:about' %}">About</a>
+        </div>
+      </nav>
+    </header>
+    <main class="container">{% block content %}{% endblock %}</main>
+    <footer>
+      <p>&copy; 2024. Developed by AK</p>
+    </footer>
+  </body>
+</html>

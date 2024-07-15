@@ -1,0 +1,19 @@
+{% extends 'base.html' %} 
+{% block title %}Event{% endblock %} 
+{% block content %}
+
+<p class="fruits">Fruits</p>
+<ul>
+  {% for x in fruits %}
+  <li>{{ x }}</li>
+  {% endfor %}
+</ul>
+
+<p class="students">Students for event</p>
+<ol>
+  {% for x in students %}
+    <li>{{ x }}</li>
+  {% endfor %}
+</ol>
+
+{% endblock %}

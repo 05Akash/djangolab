@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project List</title>
+</head>
+<body>
+    <h1>Project List</h1>
+    <ul>
+        {% for project in projects %}
+            <li>{{ project.student.first_name }} {{ project.student.last_name }} - {{ project.topic }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'part2:add_project' %}">Add New Project</a>
+</body>
+</html>
