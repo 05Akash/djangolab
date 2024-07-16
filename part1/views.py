@@ -12,21 +12,13 @@ def current_datetime(request):
     return HttpResponse(html)
 
 
-def hours_ahead(request, n):
-    now = datetime.now() + timedelta(hours=n)
-    html = "<html><body>Four hours ahead datetime is %s.</body></html>" % now
-    return HttpResponse(html)
-
-
-def hours_ahead(request):
-    now = datetime.now() + timedelta(hours=4)
-    html = "<html><body>Four hours ahead datetime is %s.</body></html>" % now
-    return HttpResponse(html)
-
-
-def hours_behind(request):
-    now = datetime.now() - timedelta(hours=4)
-    html = "<html><body>Four hours behind datetime is %s.</body></html>" % now
+def hours_4(request):
+    ahead = datetime.now() + timedelta(hours=4)
+    behind = datetime.now() - timedelta(hours=4)
+    html = (
+        "<html><body>Four hours behind datetime is %s. <br /> <br /> Four hours ahead datetime is %s.</body></html>"
+        % (behind, ahead)
+    )
     return HttpResponse(html)
 
 
